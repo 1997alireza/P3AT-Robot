@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro"
+       name="pioneer3at">
+
+<!-- <xacro:include filename="$(find my_p2os)/defs/pioneer3at_body.xacro"/> -->
+<xacro:include filename="$(find my_p2os)/defs/pioneer3at_body.xacro"/>
+<xacro:include filename="$(find my_p2os)/defs/hokuyo_utm30lx.urdf.xacro"/>
+<xacro:include filename="$(find my_p2os)/defs/kinect_camera.urdf.xacro" />
+
+<xacro:hokuyo_utm30lx name="laser" parent="top_plate" ros_topic="scan" update_rate="2" ray_count="840" min_angle="175" max_angle="-175">
+	 <origin xyz="0.1275 0 0.057" rpy="0 0 0"/>
+</xacro:hokuyo_utm30lx>
+
+<xacro:kinect_camera name="camera" parent="top_plate">
+	<origin xyz="0.1575 0 0.095" rpy="0 0 0"/>
+</xacro:kinect_camera> 
+
+<xacro:p3at_front suffix="left" reflect="1"/>
+<xacro:p3at_front suffix="right" reflect="-1"/>
+<xacro:p3at_back suffix="left" reflect="1"/>
+<xacro:p3at_back suffix="right" reflect="-1"/>
+<xacro:p3at_gazebo_ext/>
+</robot>

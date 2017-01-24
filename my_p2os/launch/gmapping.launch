@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>    
+    <node pkg="gmapping" type="slam_gmapping" name="mapping">
+
+  		<param name="map_update_interval" value="0.5" />
+     		<param name="delta" value="0.13"/>
+      		<param name="particles" value="2" />
+   		<param name="iterations" value="30" />
+		<param name="odom_frame" value="odom" />
+ 	</node> 
+</launch>

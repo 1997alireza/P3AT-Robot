@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<include file="$(find my_p2os)/launch/empty_world.launch">
+			
+		<arg name="world_name" value="$(find my_p2os)/worlds/simple.world"/>
+		<arg name="paused" value="false"/>
+		<arg name="use_sim_time" value="true"/>
+		<arg name="gui" value="true"/>
+		<arg name="verbose" value="true"/>
+		<arg name="headless" value="false"/>
+		<arg name="debug" value="false"/>
+	</include>
+
+	<!-- publish TFs for static links -->
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+
+   	 	<param name="publish_frequency" type="double" value="30.0"/>
+   	 	<param name="tf_prefix" type="string" value=""/>
+ 
+ 	</node>
+
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" > </node>	
+
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find my_p2os)/defs/pioneer3at.xacro" /> 
+
+	<node name="spawnner" pkg="gazebo_ros" type="spawn_model" args="-z 0.051 -urdf -param robot_description -model p3at" respawn="false" output="screen"/>
+	
+	<!--- -><node name="fake_odometry_publisher" pkg="my_p2os" type="fake_odometry_publisher"></node>-->
+	<!--- -><node name="odometry_publisher" pkg="my_p2os" type="odometry_publisher"></node>-->
+
+	<include file="$(find my_p2os)/launch/gmapping.launch" />
+	
+</launch>
