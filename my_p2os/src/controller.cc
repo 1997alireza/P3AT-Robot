@@ -38,7 +38,7 @@
 #include <algorithm>
 #include <assert.h>
 
-#include <controller.h>
+#include "controller.h"
 
 #include <gazebo/math/gzmath.hh>
 #include <sdf/sdf.hh>

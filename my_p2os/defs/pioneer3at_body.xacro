@@ -373,7 +373,7 @@
 
 <gazebo>
   <!-- skid_steer_drive_controller -->
-  <plugin name="pid_driver" filename="libdriver_by_PID_controller.so">
+  <plugin name="controller" filename="libcontroller.so">
     <updateRate>100.0</updateRate>
     <robotNamespace>/</robotNamespace>
     <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
