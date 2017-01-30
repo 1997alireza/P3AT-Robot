@@ -6,6 +6,7 @@
        xmlns:xacro="http://ros.org/wiki/xacro"
 >
 
+
 <!-- Chassis -->
 	<link name="base_link">
 		<inertial>
@@ -18,7 +19,7 @@
 		<visual name="base_visual">
 			<origin xyz="0 0 0.177" rpy="0 0 0"/>
 			<geometry name="pioneer_geom">
-				<mesh filename="package://p2os_urdf/meshes/p3at_meshes/chassis.stl"/>
+				<mesh filename="package://my_p2os/meshes/p3at_meshes/chassis.stl"/>
 			</geometry>
 			<material name="ChassisRed">
 				<color rgba="0.851 1.0 0.0 1.0"/>
@@ -27,7 +28,7 @@
 		<collision>
 			<origin xyz="0 0 0.177" rpy="0 0 0"/>
 				<geometry>
-					<mesh filename="package://p2os_urdf/meshes/p3at_meshes/chassis.stl"/>
+					<mesh filename="package://my_p2os/meshes/p3at_meshes/chassis.stl"/>
 				</geometry>
 		</collision>
 	</link>
@@ -47,7 +48,7 @@
 		<visual name="base_visual">
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<geometry name="pioneer_geom">
-				<mesh filename="package://p2os_urdf/meshes/p3at_meshes/top.stl"/>
+				<mesh filename="package://my_p2os/meshes/p3at_meshes/top.stl"/>
 			</geometry>
 			<material name="TopBlack">
 					<color rgba="0.038 0.038 0.038 1.0"/>
@@ -80,7 +81,7 @@
 		<visual name="base_visual">
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<geometry name="pioneer_geom">
-				<mesh filename="package://p2os_urdf/meshes/p3at_meshes/front_sonar.stl"/>
+				<mesh filename="package://my_p2os/meshes/p3at_meshes/front_sonar.stl"/>
 			</geometry>
 			<material name="SonarYellow">
 				<color rgba="0.715 0.583 0.210 1.0"/>
@@ -113,7 +114,7 @@
 		<visual name="base_visual">
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<geometry name="pioneer_geom">
-				<mesh filename="package://p2os_urdf/meshes/p3at_meshes/back_sonar.stl"/>
+				<mesh filename="package://my_p2os/meshes/p3at_meshes/back_sonar.stl"/>
 			</geometry>
 			<material name="SonarYellow">
 				<color rgba="0.715 0.583 0.210 1.0"/>
@@ -148,7 +149,7 @@
 	<visual name="base_visual">
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry name="pioneer_geom">
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/axle.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/axle.stl"/>
 		</geometry>
 		<material name="AxleGrey">
 			<color rgba="0.5 0.5 0.5 1"/>
@@ -181,7 +182,7 @@
 	<visual name="base_visual">
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry name="pioneer_geom">
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/${suffix}_hubcap.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/${suffix}_hubcap.stl"/>
 		</geometry>
 		<material name="HubcapYellow">
 			<color rgba="1.0 0.811 0.151 1.0"/>
@@ -214,7 +215,7 @@
 	<visual name="base_visual">
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry name="pioneer_geom">
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/wheel.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/wheel.stl"/>
 		</geometry>
 		<material name="WheelBlack">
 			<color rgba="0.117 0.117 0.117 1"/>
@@ -223,7 +224,7 @@
 	<collision>
 		<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
 		<geometry>
-	    <!--mesh filename="package://p2os_urdf/meshes/p3at_meshes/wheel.stl"/-->
+	    <!--mesh filename="package://my_p2os/meshes/p3at_meshes/wheel.stl"/-->
 	    <cylinder radius="0.111" length="0.075"/>
 		</geometry>
 	</collision>
@@ -254,7 +255,7 @@
 	<visual name="base_visual">
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry name="pioneer_geom">
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/axle.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/axle.stl"/>
 		</geometry>
 		<material name="AxleGrey">
 			<color rgba="0.5 0.5 0.5 1"/>
@@ -263,7 +264,7 @@
 	<collision>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry>
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/axle.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/axle.stl"/>
 		</geometry>
 	</collision>
 	</link>
@@ -288,14 +289,14 @@
 	<visual name="base_visual">
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry name="pioneer_geom">
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/${suffix}_hubcap.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/${suffix}_hubcap.stl"/>
 		</geometry>
 		<material name="HubcapYellow"/>
 	</visual>
 	<collision>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry>
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/${suffix}_hubcap.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/${suffix}_hubcap.stl"/>
 		</geometry>
 	</collision>
 	</link>
@@ -320,14 +321,14 @@
 	<visual name="base_visual">
 		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<geometry name="pioneer_geom">
-			<mesh filename="package://p2os_urdf/meshes/p3at_meshes/wheel.stl"/>
+			<mesh filename="package://my_p2os/meshes/p3at_meshes/wheel.stl"/>
 		</geometry>
 		<material name="WheelBlack"/>
 	</visual>
 	<collision>
 		<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
 		<geometry>
-	    <!--mesh filename="package://p2os_urdf/meshes/p3at_meshes/wheel.stl"/-->
+	    <!--mesh filename="package://my_p2os/meshes/p3at_meshes/wheel.stl"/-->
 	    <cylinder radius="0.111" length="0.075"/>
 		</geometry>
 	</collision>
@@ -375,18 +376,18 @@
   <!-- skid_steer_drive_controller -->
   <plugin name="controller" filename="libcontroller.so">
     <updateRate>100.0</updateRate>
-    <robotNamespace>/</robotNamespace>
+    <robotNamespace>$(arg namespace)</robotNamespace>
     <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
     <rightFrontJoint>p3at_front_right_wheel_joint</rightFrontJoint>
     <leftRearJoint>p3at_back_left_wheel_joint</leftRearJoint>
     <rightRearJoint>p3at_back_right_wheel_joint</rightRearJoint>
     <wheelSeparation>0.4</wheelSeparation>
     <wheelDiameter>0.215</wheelDiameter>
-    <robotBaseFrame>base_link</robotBaseFrame>
+    <robotBaseFrame>$(arg namespace)/base_link</robotBaseFrame>
     <torque>200</torque>
-    <topicName>cmd_vel</topicName>
-    <odometryTopic>odom</odometryTopic>
-    <odometryFrame>odom</odometryFrame>
+    <topicName>$(arg namespace)/cmd_vel</topicName>
+    <odometryTopic>$(arg namespace)/odom</odometryTopic>
+    <odometryFrame>$(arg namespace)/odom</odometryFrame>
     <broadcastTF>1</broadcastTF>
   </plugin>
 </gazebo>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<arg name="x" default="0" />
+	<arg name="y" default="0" />
+	<arg name="z" default="0.051" />
+	
+
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find my_p2os)/defs/pioneer3at.xacro " /> 
+
+
+	<!-- publish TFs for static links -->
+
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="30.0"/>
+		<param name="tf_prefix" type="str" value=""/>
+	</node>
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+		<param name="rate" value="30.0" />
+	</node>
+
+
+	<node name="spawnner" pkg="gazebo_ros" type="spawn_model"
+		 args="-urdf -param robot_description 
+		 -model p3at -x $(arg x) -y $(arg y) -z $(arg z)" respawn="false" output="screen"/>
+			
+	<!--- -><node name="fake_odometry_publisher" pkg="my_p2os" type="fake_odometry_publisher"></node>-->
+	<!--- -><node name="odometry_publisher" pkg="my_p2os" type="odometry_publisher"></node>-->
+
+
+	
+</launch>
+

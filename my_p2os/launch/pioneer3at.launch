@@ -30,6 +30,6 @@
 	<!--- -><node name="fake_odometry_publisher" pkg="my_p2os" type="fake_odometry_publisher"></node>-->
 	<!--- -><node name="odometry_publisher" pkg="my_p2os" type="odometry_publisher"></node>-->
 
-	<include file="$(find my_p2os)/launch/gmapping.launch" />
+	<!-- <include file="$(find my_p2os)/launch/gmapping.launch" /> -->
 	
 </launch>
