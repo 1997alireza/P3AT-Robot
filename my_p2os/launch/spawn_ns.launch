@@ -8,7 +8,7 @@
 	
 	<group ns="$(arg namespace)">
 
-		<param name="robot_description" command="$(find xacro)/xacro.py $(find my_p2os)/defs/pioneer3at.xacro namespace:=$(arg namespace)" /> 
+		<param name="robot_description" command="$(find xacro)/xacro.py $(find my_p2os)/defs/pioneer3at_ns.xacro namespace:=$(arg namespace)" /> 
 
 		<!-- publish TFs for static links -->
 

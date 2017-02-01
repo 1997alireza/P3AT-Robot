@@ -6,7 +6,7 @@
 	<arg name="z" default="0.051" />
 	
 
-	<param name="robot_description" command="$(find xacro)/xacro.py $(find my_p2os)/defs/pioneer3at.xacro " /> 
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find my_p2os)/defs/pioneer3at.xacro" /> 
 
 
 	<!-- publish TFs for static links -->

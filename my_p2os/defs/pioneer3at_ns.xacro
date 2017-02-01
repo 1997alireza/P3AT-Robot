@@ -5,9 +5,10 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro"
        name="pioneer3at">
-       
 
-<xacro:include filename="$(find my_p2os)/defs/pioneer3at_body.xacro"/>
+<xacro:arg name="namespace" default="" />
+
+<xacro:include filename="$(find my_p2os)/defs/pioneer3at_body_ns.xacro"/>
 <xacro:include filename="$(find my_p2os)/defs/hokuyo_utm30lx.urdf.xacro"/>
 <xacro:include filename="$(find my_p2os)/defs/kinect_camera.urdf.xacro" />
 

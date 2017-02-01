@@ -4,7 +4,7 @@
 	<arg name="namespace" default="ns" />
 
     <node ns="$(arg namespace)" pkg="gmapping" type="slam_gmapping" name="mapping">
-<remap from="tf" to="$(arg namespace)/tf" />
+		<remap from="tf" to="$(arg namespace)/tf" />
 		<remap from="tf_static" to="$(arg namespace)/tf_static" />
   		<param name="map_update_interval" value="0.5" />
      	<param name="delta" value="0.13"/>
